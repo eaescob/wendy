@@ -1,0 +1,70 @@
+[
+  {
+    "id": "average",
+    "description": "",
+    "name": "Average",
+    "keyword": "Feature",
+    "line": 1,
+    "elements": [
+      {
+        "id": "average;get-average-score-of-grades-for-a-student",
+        "description": "",
+        "name": "Get average score of grades for a student",
+        "keyword": "Scenario",
+        "line": 3,
+        "steps": [
+          {
+            "result": {
+              "duration": 69642000,
+              "status": "passed"
+            },
+            "name": "I have a student with a bunch of grades",
+            "keyword": "Given ",
+            "line": 4,
+            "match": {
+              "location": "Stepdefs.i_have_a_student()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1276000,
+              "status": "passed"
+            },
+            "name": "I add score 98,99,70,64,86,78",
+            "keyword": "When ",
+            "line": 5,
+            "match": {
+              "arguments": [
+                {
+                  "val": "98,99,70,64,86,78",
+                  "offset": 12
+                }
+              ],
+              "location": "Stepdefs.add_score(String)"
+            }
+          },
+          {
+            "result": {
+              "duration": 3082000,
+              "status": "passed"
+            },
+            "name": "the average score is 82.00",
+            "keyword": "Then ",
+            "line": 6,
+            "match": {
+              "arguments": [
+                {
+                  "val": "82.00",
+                  "offset": 21
+                }
+              ],
+              "location": "Stepdefs.get_average(String)"
+            }
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "uri": "com/wendy/example/get_average.feature"
+  }
+]
