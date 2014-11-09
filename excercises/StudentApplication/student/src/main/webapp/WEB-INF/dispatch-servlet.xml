@@ -24,9 +24,9 @@
     </bean>
 	
     <!-- Enables convention-based request URL mapping to @Controllers (ex: /person/* maps to PersonController) -->
-    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping">
+    <!--   <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping">
         <property name="order" value="1" />
-    </bean>
+    </bean> -->
     
 	<!-- Enables annotated POJO @Controllers -->
     <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
