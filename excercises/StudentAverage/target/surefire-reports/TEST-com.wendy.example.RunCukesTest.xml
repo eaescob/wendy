@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="2" time="0.007" errors="0" skipped="0" tests="8" name="com.wendy.example.RunCukesTest">
+<testsuite failures="0" time="0.006" errors="0" skipped="0" tests="8" name="com.wendy.example.RunCukesTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries"/>
@@ -17,7 +17,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/Users/eescobar1/Documents/workspace/StudentAverage"/>
+    <property name="user.dir" value="/Users/eescobar1/dev/wendy/excercises/StudentAverage"/>
     <property name="java.runtime.version" value="1.6.0_65-b14-462-11M4609"/>
     <property name="java.awt.graphicsenv" value="apple.awt.CGraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/endorsed"/>
@@ -46,7 +46,7 @@
     <property name="java.vm.specification.version" value="1.0"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher install"/>
     <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="apple.awt.CToolkit"/>
@@ -66,31 +66,11 @@
     <property name="sun.cpu.isalist" value=""/>
   </properties>
   <testcase time="0.002" classname="Scenario: Get average score of grades for a student" name="Given I have a student with a bunch of grades"/>
-  <testcase time="0.001" classname="Scenario: Get average score of grades for a student" name="When I add score 98,99,70,64,86,78"/>
+  <testcase time="0" classname="Scenario: Get average score of grades for a student" name="When I add score 98,99,70,64,86,78"/>
   <testcase time="0" classname="Scenario: Get average score of grades for a student" name="Then the average score is 82.00"/>
-  <testcase time="0" classname="Scenario: Get average score of grades for a student" name="Scenario: Get average score of grades for a student"/>
-  <testcase time="0" classname="Scenario: Get minimum score" name="Given I have a student with a bunch of grades"/>
+  <testcase time="0.001" classname="Scenario: Get average score of grades for a student" name="Scenario: Get average score of grades for a student"/>
+  <testcase time="0.001" classname="Scenario: Get minimum score" name="Given I have a student with a bunch of grades"/>
   <testcase time="0" classname="Scenario: Get minimum score" name="When I add score 98,79,60,23,10"/>
-  <testcase time="0.002" classname="Scenario: Get minimum score" name="Then the minimum score is 20">
-    <failure message="expected:&lt;20&gt; but was:&lt;10&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;20&gt; but was:&lt;10&gt;
-	at org.junit.Assert.fail(Assert.java:88)
-	at org.junit.Assert.failNotEquals(Assert.java:743)
-	at org.junit.Assert.assertEquals(Assert.java:118)
-	at org.junit.Assert.assertEquals(Assert.java:555)
-	at org.junit.Assert.assertEquals(Assert.java:542)
-	at com.wendy.example.Stepdefs.get_minimum(Stepdefs.java:34)
-	at ✽.Then the minimum score is 20(com/wendy/example/get_average.feature:11)
-</failure>
-  </testcase>
-  <testcase time="0.002" classname="Scenario: Get minimum score" name="Scenario: Get minimum score">
-    <failure message="expected:&lt;20&gt; but was:&lt;10&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;20&gt; but was:&lt;10&gt;
-	at org.junit.Assert.fail(Assert.java:88)
-	at org.junit.Assert.failNotEquals(Assert.java:743)
-	at org.junit.Assert.assertEquals(Assert.java:118)
-	at org.junit.Assert.assertEquals(Assert.java:555)
-	at org.junit.Assert.assertEquals(Assert.java:542)
-	at com.wendy.example.Stepdefs.get_minimum(Stepdefs.java:34)
-	at ✽.Then the minimum score is 20(com/wendy/example/get_average.feature:11)
-</failure>
-  </testcase>
+  <testcase time="0.001" classname="Scenario: Get minimum score" name="Then the minimum score is 10"/>
+  <testcase time="0.001" classname="Scenario: Get minimum score" name="Scenario: Get minimum score"/>
 </testsuite>

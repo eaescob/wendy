@@ -1,5 +1,7 @@
 Feature: Average
 
+Background: This is just an example application
+
 Scenario: Get average score of grades for a student
 Given I have a student with a bunch of grades
 When I add score 98,99,70,64,86,78

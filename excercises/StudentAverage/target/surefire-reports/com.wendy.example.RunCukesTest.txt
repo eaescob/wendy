@@ -1,24 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.wendy.example.RunCukesTest
 -------------------------------------------------------------------------------
-Tests run: 8, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.388 sec <<< FAILURE!
-Then the minimum score is 20(Scenario: Get minimum score)  Time elapsed: 0.002 sec  <<< FAILURE!
-java.lang.AssertionError: expected:<20> but was:<10>
-	at org.junit.Assert.fail(Assert.java:88)
-	at org.junit.Assert.failNotEquals(Assert.java:743)
-	at org.junit.Assert.assertEquals(Assert.java:118)
-	at org.junit.Assert.assertEquals(Assert.java:555)
-	at org.junit.Assert.assertEquals(Assert.java:542)
-	at com.wendy.example.Stepdefs.get_minimum(Stepdefs.java:34)
-	at ?.Then the minimum score is 20(com/wendy/example/get_average.feature:11)
-
-Scenario: Get minimum score  Time elapsed: 0.002 sec  <<< FAILURE!
-java.lang.AssertionError: expected:<20> but was:<10>
-	at org.junit.Assert.fail(Assert.java:88)
-	at org.junit.Assert.failNotEquals(Assert.java:743)
-	at org.junit.Assert.assertEquals(Assert.java:118)
-	at org.junit.Assert.assertEquals(Assert.java:555)
-	at org.junit.Assert.assertEquals(Assert.java:542)
-	at com.wendy.example.Stepdefs.get_minimum(Stepdefs.java:34)
-	at ?.Then the minimum score is 20(com/wendy/example/get_average.feature:11)
-
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.413 sec
