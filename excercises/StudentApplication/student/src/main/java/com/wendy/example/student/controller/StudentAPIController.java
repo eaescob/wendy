@@ -30,6 +30,7 @@ public class StudentAPIController {
 	}
 	
 	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@RequestMapping( value = "/api/students.json", method = RequestMethod.POST,
 			produces = MediaType.APPLICATION_JSON_VALUE,
 			consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -70,7 +71,8 @@ public class StudentAPIController {
 		}
 		
 		student = assembler.fromResource(params);
-		studentDao.update(ssn, assembler.fromResource(params));
+		studentDao.update(ssn, student);
+		
 		return new ResponseEntity(null, HttpStatus.NO_CONTENT);	
 	}
 	

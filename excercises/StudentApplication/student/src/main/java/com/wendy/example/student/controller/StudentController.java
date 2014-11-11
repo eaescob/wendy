@@ -26,7 +26,7 @@ public class StudentController {
     private static final String FORM_MODEL_KEY = "student";
     private static final String LIST_MODEL_KEY = "students";
     private static final String SEARCH_MODEL_KEY = "search";
-    private static final String GRADE_MODEL_KEY = "grade";
+   // private static final String GRADE_MODEL_KEY = "grade";
     
     private static StudentDao studentDao = new StudentDaoImpl();
     
@@ -47,7 +47,11 @@ public class StudentController {
     
     @RequestMapping(value = "/students/addStudent.do", method = RequestMethod.POST)
     public ModelAndView addStudent(Student student) {
-    	studentDao.merge(student);
+    	
+    	if (studentDao.findBySsn(student.getSsn()) != null) 
+    		studentDao.update(student.getSsn(), student);
+    	else
+    		studentDao.merge(student);
     	return new ModelAndView(REDIRECT_LIST_VIEW_KEY, list());
     }
     
@@ -83,7 +87,9 @@ public class StudentController {
     @RequestMapping(value = "/students/addGrade.do", method = RequestMethod.GET)
     public ModelAndView showAddGrade(@RequestParam("ssn") String ssn) {
     	Student student = studentDao.findBySsn(ssn);
-    	return new ModelAndView(GRADE_VIEW_KEY, GRADE_MODEL_KEY, student);
+    	ModelAndView model = new ModelAndView(GRADE_VIEW_KEY);
+    	model.addObject("student", student);
+    	return model;
     }
     
     @RequestMapping(value = "/students/addGrade.do", method = RequestMethod.POST)

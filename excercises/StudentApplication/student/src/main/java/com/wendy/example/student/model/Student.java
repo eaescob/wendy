@@ -22,15 +22,17 @@ public class Student implements Serializable {
 	private String degree;
 	private StudentAverage studentAverage;
 	
-	public Student(String firstName, String lastName) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.studentAverage = new StudentAverage();
-	}
-	
 	public Student() {
 		this(null, null);
 	}
+	
+	public Student(String firstName, String lastName) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.studentAverage = new StudentAverage();	
+	}
+	
+
 
 	public List<Integer> getScores() {
 		return studentAverage.getGrades();
