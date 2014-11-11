@@ -2,6 +2,9 @@ package com.wendy.example.student.model;
 
 import java.util.Collection;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class StudentList {
 	private Collection<Student> students;
 	

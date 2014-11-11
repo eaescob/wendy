@@ -1,4 +1,4 @@
-package com.wendy.example.student.view;
+package com.wendy.example.student.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

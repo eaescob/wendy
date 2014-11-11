@@ -12,6 +12,7 @@
 	    <display:column property="lastName" title="Last Name"/>
 	    <display:column property="department" title="Department" />
 	    <display:column property="degree" title="Degree" />
+	    <display:column property="gpa" title="GPA" />
 	    <display:column title="Actions">
 	        <c:url var="editUrl" value="/students/showStudent.do">
 	            <c:param name="ssn" value="${student.ssn}" />

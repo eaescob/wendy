@@ -18,15 +18,17 @@ public class Stepdefs {
 	private static final StudentDao studentDao = new StudentDaoImpl();
 	private Student student;
 	
-	@Given("^I have a student with first name \"([^\"]*)\" and last name \"([^\"]*)\"$")
-	public void add_new_student(String firstName, String lastName) {
-		student = new Student(firstName, lastName);
+	@Given("^I have a student to add")
+	public void add_new_student() {
+		student = new Student();
 	}
 	
 	@When("^I add the following data for new student:$")
 	public void add_new_student_data(List<TempStudent> list) {
 		
 		TempStudent data = list.get(0);
+		student.setFirstName(data.firstname);
+		student.setLastName(data.lastname);
 		student.setSsn(data.ssn);
 		student.setAddress1(data.addr1);
 		student.setState(data.state);
@@ -46,6 +48,8 @@ public class Stepdefs {
 	
 	
 	public class TempStudent {
+		public String firstname;
+		public String lastname;
 		public String ssn;
 		public String addr1;
 		public String state;

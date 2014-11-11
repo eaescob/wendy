@@ -40,7 +40,7 @@ formatter.match({
   "location": "Stepdefs.i_have_a_student()"
 });
 formatter.result({
-  "duration": 75117000,
+  "duration": 99036000,
   "status": "passed"
 });
 formatter.match({
@@ -53,7 +53,7 @@ formatter.match({
   "location": "Stepdefs.add_score(String)"
 });
 formatter.result({
-  "duration": 1444000,
+  "duration": 1296000,
   "status": "passed"
 });
 formatter.match({
@@ -66,7 +66,7 @@ formatter.match({
   "location": "Stepdefs.get_average(String)"
 });
 formatter.result({
-  "duration": 3076000,
+  "duration": 3087000,
   "status": "passed"
 });
 formatter.background({
@@ -103,7 +103,7 @@ formatter.match({
   "location": "Stepdefs.i_have_a_student()"
 });
 formatter.result({
-  "duration": 21000,
+  "duration": 22000,
   "status": "passed"
 });
 formatter.match({
@@ -116,7 +116,7 @@ formatter.match({
   "location": "Stepdefs.add_score(String)"
 });
 formatter.result({
-  "duration": 84000,
+  "duration": 87000,
   "status": "passed"
 });
 formatter.match({
@@ -129,7 +129,7 @@ formatter.match({
   "location": "Stepdefs.get_minimum(int)"
 });
 formatter.result({
-  "duration": 474000,
+  "duration": 775000,
   "status": "passed"
 });
 });

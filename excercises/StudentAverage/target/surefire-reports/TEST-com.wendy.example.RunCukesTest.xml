@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.006" errors="0" skipped="0" tests="8" name="com.wendy.example.RunCukesTest">
+<testsuite failures="0" time="0.002" errors="0" skipped="0" tests="8" name="com.wendy.example.RunCukesTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries"/>
@@ -68,9 +68,9 @@
   <testcase time="0.002" classname="Scenario: Get average score of grades for a student" name="Given I have a student with a bunch of grades"/>
   <testcase time="0" classname="Scenario: Get average score of grades for a student" name="When I add score 98,99,70,64,86,78"/>
   <testcase time="0" classname="Scenario: Get average score of grades for a student" name="Then the average score is 82.00"/>
-  <testcase time="0.001" classname="Scenario: Get average score of grades for a student" name="Scenario: Get average score of grades for a student"/>
-  <testcase time="0.001" classname="Scenario: Get minimum score" name="Given I have a student with a bunch of grades"/>
+  <testcase time="0" classname="Scenario: Get average score of grades for a student" name="Scenario: Get average score of grades for a student"/>
+  <testcase time="0" classname="Scenario: Get minimum score" name="Given I have a student with a bunch of grades"/>
   <testcase time="0" classname="Scenario: Get minimum score" name="When I add score 98,79,60,23,10"/>
-  <testcase time="0.001" classname="Scenario: Get minimum score" name="Then the minimum score is 10"/>
-  <testcase time="0.001" classname="Scenario: Get minimum score" name="Scenario: Get minimum score"/>
+  <testcase time="0" classname="Scenario: Get minimum score" name="Then the minimum score is 10"/>
+  <testcase time="0" classname="Scenario: Get minimum score" name="Scenario: Get minimum score"/>
 </testsuite>

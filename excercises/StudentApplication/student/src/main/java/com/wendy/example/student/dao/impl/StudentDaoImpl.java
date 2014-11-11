@@ -2,7 +2,9 @@ package com.wendy.example.student.dao.impl;
 
 import com.wendy.example.student.dao.StudentDao;
 import com.wendy.example.student.model.Student;
+import com.wendy.example.student.view.StudentView;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,9 +19,15 @@ public class StudentDaoImpl implements StudentDao {
 		student.setAddress1("573 Bonita Ave.");
 		student.setState("CA");
 		student.setCity("San Marino");
+		student.setCountry("US");
 		student.setSsn("123-56-7890");
 		student.setDepartment("Engineering");
 		student.setDegree("Computer Science");
+		student.addScore(98);
+		student.addScore(86);
+		student.addScore(78);
+		student.addScore(99);
+		student.addScore(92);
 		addStudent(student);
 	}
 	
@@ -42,6 +50,16 @@ public class StudentDaoImpl implements StudentDao {
 		}
 		
 		addStudent(student);
+	}
+	
+	public void update(String ssn, Student data) {
+		Student student = STUDENT_HASH.get(ssn);
+		
+		if (student == null)
+			return;
+		
+		student.copy(data);
+		STUDENT_HASH.put(ssn, student);
 	}
 	
 	public Student findBySsn(String ssn) {
@@ -69,6 +87,16 @@ public class StudentDaoImpl implements StudentDao {
 		}
 		
 		return null;
+	}
+	
+	public Iterable<StudentView> getAllView() {
+		ArrayList<StudentView> allStudents = new ArrayList<StudentView>();
+		
+		for(Student student : getAll()) {
+			allStudents.add(new StudentView(student));
+		}
+		
+		return allStudents;
 	}
 	
 	

@@ -22,7 +22,7 @@
         "steps": [
           {
             "result": {
-              "duration": 75117000,
+              "duration": 99036000,
               "status": "passed"
             },
             "name": "I have a student with a bunch of grades",
@@ -34,7 +34,7 @@
           },
           {
             "result": {
-              "duration": 1444000,
+              "duration": 1296000,
               "status": "passed"
             },
             "name": "I add score 98,99,70,64,86,78",
@@ -52,7 +52,7 @@
           },
           {
             "result": {
-              "duration": 3076000,
+              "duration": 3087000,
               "status": "passed"
             },
             "name": "the average score is 82.00",
@@ -87,7 +87,7 @@
         "steps": [
           {
             "result": {
-              "duration": 21000,
+              "duration": 22000,
               "status": "passed"
             },
             "name": "I have a student with a bunch of grades",
@@ -99,7 +99,7 @@
           },
           {
             "result": {
-              "duration": 84000,
+              "duration": 87000,
               "status": "passed"
             },
             "name": "I add score 98,79,60,23,10",
@@ -117,7 +117,7 @@
           },
           {
             "result": {
-              "duration": 474000,
+              "duration": 775000,
               "status": "passed"
             },
             "name": "the minimum score is 10",

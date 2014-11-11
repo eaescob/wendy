@@ -3,6 +3,7 @@ package com.wendy.example.student.model;
 import com.wendy.example.StudentAverage;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Student implements Serializable {
 	private static final long serialVersionUID = 123456789L;
@@ -24,12 +25,17 @@ public class Student implements Serializable {
 	public Student(String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.studentAverage = new StudentAverage();
 	}
 	
 	public Student() {
 		this(null, null);
 	}
 
+	public List<Integer> getScores() {
+		return studentAverage.getGrades();
+	}
+	
 	public String getGpa() {
 		return studentAverage.getAverage();
 	}
@@ -140,6 +146,24 @@ public class Student implements Serializable {
 		return result;
 	}
 
+	public void copy(Student data) {
+		if (data.getFirstName() != null) setFirstName(data.getFirstName());
+		if (data.getLastName() !=  null) setLastName(data.getLastName());
+		if (data.getAddress1() != null) setAddress1(data.getAddress1());
+		if (data.getAddress2() != null) setAddress2(data.getAddress2());
+		if (data.getCity() != null) setCity(data.getCity());
+		if (data.getState() != null) setState(data.getState());
+		if (data.getCountry() != null) setCountry(data.getCountry());
+		if (data.getDepartment() != null) setDepartment(data.getDepartment());
+		if (data.getDegree() != null) setDegree(data.getDegree());
+		
+		if (data.getScores() != null) {
+			for (int score : data.getScores()) {
+				addScore(score);
+			}
+		}
+	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -208,9 +232,4 @@ public class Student implements Serializable {
 		
 		return true;
 	}
-	
-	
-	
-	
-
 }

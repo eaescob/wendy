@@ -13,6 +13,10 @@ public class StudentAverage {
 		grades.add(score);
 	}
 	
+	public List<Integer> getGrades() {
+		return grades;
+	}
+	
 	public String getAverage() {
 		double average =  grades.size() > 0 ? getSum()/grades.size() : 0;
 		return String.format("%.2f", average);
