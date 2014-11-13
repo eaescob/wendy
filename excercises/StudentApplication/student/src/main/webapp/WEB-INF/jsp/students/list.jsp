@@ -6,23 +6,27 @@
 
 <div id="content">
     <h2><fmt:message key="student.list.title"/></h2>
+
 	<display:table name="students" id="student">
-	    <display:column property="ssn" title="SSN" />
-	    <display:column property="firstName" title="First Name"/>
-	    <display:column property="lastName" title="Last Name"/>
-	    <display:column property="department" title="Department" />
-	    <display:column property="degree" title="Degree" />
-	    <display:column property="gpa" title="GPA" />
-	    <display:column title="Actions">
-	        <c:url var="editUrl" value="/students/showStudent.do">
-	            <c:param name="ssn" value="${student.ssn}" />
-	        </c:url>
-	        <c:url var="deleteUrl" value="/students/deleteStudent.do">
-	            <c:param name="ssn" value="${student.ssn}" />
-	        </c:url>
-	        <a id="edit${student.ssn}" href='<c:out value="${editUrl}"/>'><fmt:message key="button.edit"/></a>
-	        <a id="delete${student.ssn}" href='<c:out value="${deleteUrl}"/>'><fmt:message key="button.delete"/></a>
+	    
+	    <display:column property="ssn" sortable="true" title="SSN" href="/student/students/showStudent.do" paramId="ssn"/>
+	    <display:column title="First Name">
+	    	<c:out value="${student.firstName}"/>
 	    </display:column>
+	    <display:column title="Last Name">
+	    	<c:out value="${student.lastName}"/>
+	    </display:column>
+	    <display:column title="Department">
+	    	<c:out value="${student.department}"/>
+	    </display:column>
+	    <display:column title="Degree">
+	    	<c:out value="${student.degree}"/>
+	    </display:column>
+
+	    <display:column title="GPA" href="/student/students/addGrade.do?return=list" paramId="ssn" paramProperty="ssn">
+	    	<c:out value="${student.gpa}"/>
+	    </display:column>
+	    <display:column title="Actions" value="Delete" href="/student/students/deleteStudent.do" paramId="ssn" paramProperty="ssn"/>
 	    
 	</display:table>
 </div>

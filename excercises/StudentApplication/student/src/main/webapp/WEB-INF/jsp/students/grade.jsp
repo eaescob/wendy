@@ -12,7 +12,8 @@
 		    <display:column property="lastName" title="Last Name"/>
 		    <display:column title="Add Grade">
 		    	<form action="${url}" method="POST">
-			    	<input type="hidden" name="ssn" value="${student.ssn}">
+			    	<input type="hidden" name="ssn" value="${student.ssn}"/>
+			    	<input type="hidden" name="returnUrl" value="${returnUrl}"/>
 			    	    <label for="score"><fmt:message key="student.form.score"/>:</label>
 			            <span class="input"><input type="text" name="score" length="2"/></span>
 			             <div class="button"><input id="btnGrade" type="submit" value="<fmt:message key="button.addgrade"/>" /></div>

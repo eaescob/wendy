@@ -81,23 +81,41 @@ public class StudentController {
     public ModelAndView search(@ModelAttribute("search") Search searchForm)  {
     	Student student = studentDao.findStudent(searchForm.getSearchString());
     	
+    	if (student == null) {
+    		return new ModelAndView(SEARCH_VIEW_KEY, SEARCH_MODEL_KEY, new Search());
+    	}
+    	
     	return new ModelAndView(FORM_VIEW_KEY, FORM_MODEL_KEY, student);
     }
     
     @RequestMapping(value = "/students/addGrade.do", method = RequestMethod.GET)
-    public ModelAndView showAddGrade(@RequestParam("ssn") String ssn) {
+    public ModelAndView showAddGrade(@RequestParam("ssn") String ssn,
+    		@RequestParam("return") String returnUrl) {
     	Student student = studentDao.findBySsn(ssn);
+    	
     	ModelAndView model = new ModelAndView(GRADE_VIEW_KEY);
     	model.addObject("student", student);
+    	model.addObject("returnUrl", returnUrl);
     	return model;
     }
     
     @RequestMapping(value = "/students/addGrade.do", method = RequestMethod.POST)
     public ModelAndView addGrade(@RequestParam("ssn") String ssn, 
-    		@RequestParam("score") int score) {
+    		@RequestParam("returnUrl") String returnUrl,
+    		@RequestParam("score") String score) {
     	Student student = studentDao.findBySsn(ssn);
-    	if (student != null)
-    		student.addScore(score);
+    	if (student != null) {
+    		String[] scores = score.split(",");
+    		
+    		for (String s : scores) {
+    			student.addScore(Integer.valueOf(s));
+    		}
+    	}
+    	
+    	if (returnUrl.contains("list")) {
+    		return new ModelAndView(REDIRECT_LIST_VIEW_KEY, list());
+    	}
+    	
     	return  new ModelAndView(FORM_VIEW_KEY, FORM_MODEL_KEY, student);
     	
     }

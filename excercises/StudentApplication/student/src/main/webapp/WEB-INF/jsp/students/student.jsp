@@ -8,7 +8,7 @@
     <h2><fmt:message key="student.form.title"/></h2>
 
 	<c:url var="url" value="/students/addStudent.do" /> 
-	<form:form action="${url}" commandName="student" method="POST">
+	<form:form action="/student/students/addStudent.do" commandName="student" method="POST">
 	
 	    <fieldset>
 	    	<div class="form-row">
@@ -51,14 +51,6 @@
 	        <div class="form-row">
 	        	<label for="degree"><fmt:message key="student.form.degree"/>:</label>
 	        	<span class="input"><form:input path="degree" /></span>
-	        </div>
-	        
-	        <div class="form-buttons">
-	        	<c:url var="url" value="/students/addGrade.do">
-	        		<c:param name="ssn" value="${student.ssn}"/>
-	        	</c:url>
-	        	
-	        	<a id="addgrade" href='<c:out value="${url}"/>'><fmt:message key="button.addgrade"/></a>
 	        </div>
 	        <div class="form-buttons">
 	            <div class="button"><input id="btnSave" type="submit" value="<fmt:message key="button.save"/>" /></div>
