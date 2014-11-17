@@ -70,7 +70,7 @@ public class Stepdefs {
 	}
 	
 	@And("^Student \"([^\"]*)\" has a gpa of (\\d+)$")
-	public void compare_gpa (String firstName, int gpa) {
+	public void compare_gpa (String firstName, double gpa) {
 		Student s = studentDao.findStudent(firstName);
 		
 		assertNotNull(s);
