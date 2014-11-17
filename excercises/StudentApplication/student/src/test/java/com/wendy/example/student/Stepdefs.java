@@ -1,12 +1,12 @@
 package com.wendy.example.student;
 
-import java.util.Collection;
 import java.util.List;
 
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import com.wendy.example.student.dao.*;
 import com.wendy.example.student.dao.impl.*;
@@ -57,5 +57,26 @@ public class Stepdefs {
 		public String department;
 		public String degree;
 	}
+	
+	@And("^I add the following scores \"(.+)\" to student \"([^\"]*)\"$")
+	public void add_scores (List<String> scores, String firstName){
+		Student s = studentDao.findStudent(firstName);
+		
+		assertNotNull(s);
+		
+		for (String score : scores) {
+			s.addScore(Integer.valueOf(score));
+		}
+	}
+	
+	@And("^Student \"([^\"]*)\" has a gpa of (\\d+)$")
+	public void compare_gpa (String firstName, int gpa) {
+		Student s = studentDao.findStudent(firstName);
+		
+		assertNotNull(s);
+		
+		assertEquals(String.format("%.2f", gpa), s.getGpa());
+	}
+	
 	
 }
