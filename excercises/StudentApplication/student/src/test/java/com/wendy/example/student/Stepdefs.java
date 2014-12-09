@@ -1,6 +1,5 @@
 package com.wendy.example.student;
 
-import java.util.Collection;
 import java.util.List;
 
 import cucumber.api.java.en.Given;
