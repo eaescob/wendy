@@ -5,9 +5,11 @@ import java.util.Scanner;
 public class ReservationSystem {
 	private static final int PLANE_CAPACITY = 10;
 	private static boolean[] seatMapping = new boolean[PLANE_CAPACITY];
+	private static final int FIRSTCLASS_MAX = 5;
+	private static final int ECONOMY_START = 5;
 	
 	static {
-		for (int x = 0; x < seatMapping.length; x++)
+		for (int x = 0; x < PLANE_CAPACITY; x++)
 			seatMapping[x] = false;
 	}
 	
@@ -24,7 +26,7 @@ public class ReservationSystem {
 	public static void reserveFirstClass(boolean upgrade, Scanner scanner) {
 		int freeSeat = 0;
 		boolean seatFound = false;
-		for(int x = 0; x < 5; x++) {
+		for(int x = 0; x < FIRSTCLASS_MAX; x++) {
 			if (!seatMapping[x]) {
 				seatFound = true;
 				freeSeat = x;
@@ -56,7 +58,7 @@ public class ReservationSystem {
 		boolean seatFound = false;
 		int freeSeat = 0;
 		
-		for (int x = 5; x < PLANE_CAPACITY; x++) {
+		for (int x = ECONOMY_START; x < PLANE_CAPACITY; x++) {
 			if (!seatMapping[x]) {
 				seatFound = true;
 				freeSeat = x;
